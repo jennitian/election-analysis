@@ -14,6 +14,7 @@ import os
 file_to_load = os.path.join("Resources", "election_results.csv")
 file_to_save = os.path.join("Analysis", "election_analysis.txt")
 
+#empty variables
 total_votes = 0
 candidate_options = []
 candidate_votes = {}
@@ -88,6 +89,7 @@ with open(file_to_save, "w") as txt_file:
             winning_count = votes
             winning_percentage = vote_percentage
             winning_candidate = candidate
+    
     winning_candidate_summary = (
         f"-----------------------------------\n"
         f"Winner: {winning_candidate}\n"

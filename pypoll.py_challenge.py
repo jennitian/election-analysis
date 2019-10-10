@@ -30,6 +30,7 @@ with open(file_to_load) as election_data:
     #the first row of headers
     headers = next(file_reader)
     
+    #creates candidate and county lists
     for row in file_reader:
         total_votes += 1
         candidate_name = row[2]
@@ -54,6 +55,7 @@ with open(file_to_save, "w") as txt_file:
         )
     print(election_results, end="")
     txt_file.write(election_results)
+    #finds county votes, vote percentages, and prints results
     for county in counties_list:
         votes_county = counties_votes[county]
         vote_percentage_county = (int(votes_county)/total_votes * 100)
@@ -73,7 +75,7 @@ with open(file_to_save, "w") as txt_file:
             )
     print(turnout, end='')
     txt_file.write(turnout)
-
+    #finds total votes/candidate, calculates percentages, prints results
     for candidate in candidate_options:
         
         votes = candidate_votes[candidate]
